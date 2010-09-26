@@ -176,7 +176,7 @@ class WufooSource extends DataSource {
 		$url = $this->url."forms/$form/entries.xml";
 		$res = $this->http->post($url, $data, $this->__getAuthArray());
 		$out = $this->__xmlToArray($res);
-		return (!empty($out['PostResponse']['Success'])) ? $out['PostResponse']['EntryId'] : false;
+		return (!empty($out['PostResponse']['Success'])) ? $out['PostResponse']['EntryId'] : $out;
 	}
 	
 	/**
